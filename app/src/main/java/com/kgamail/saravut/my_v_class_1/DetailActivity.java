@@ -25,6 +25,7 @@ public class DetailActivity extends AppCompatActivity {
 
         //sHOW VIEW
         String strName = getIntent().getStringExtra("Name");
+
         nameTextView.setText(strName);
 
         int IntImage = getIntent().getIntExtra("Image",R.drawable.traffic_01);
