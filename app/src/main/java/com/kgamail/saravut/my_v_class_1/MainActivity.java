@@ -43,29 +43,33 @@ public class MainActivity extends AppCompatActivity {
     private void controllListview() {
 
         // Setup fo name
-        final String[] nameStrings = new String[20];
-        nameStrings[0] = "หัวข้อหลักที่ 1";
-        nameStrings[1] = "หัวข้อหลักที่ 2";
-        nameStrings[2] = "หัวข้อหลักที่ 3";
-        nameStrings[3] = "หัวข้อหลักที่ 4";
-        nameStrings[4] = "หัวข้อหลักที่ 5";
-        nameStrings[5] = "หัวข้อหลักที่ 6";
-        nameStrings[6] = "หัวข้อหลักที่ 7";
-        nameStrings[7] = "หัวข้อหลักที่ 8";
-        nameStrings[8] = "หัวข้อหลักที่ 9";
-        nameStrings[9] = "หัวข้อหลักที่ 10";
-        nameStrings[10] = "หัวข้อหลักที่ 11";
-        nameStrings[11] = "หัวข้อหลักที่ 12";
-        nameStrings[12] = "หัวข้อหลักที่ 13";
-        nameStrings[13] = "หัวข้อหลักที่ 14";
-        nameStrings[14] = "หัวข้อหลักที่ 15";
-        nameStrings[15] = "หัวข้อหลักที่ 16";
-        nameStrings[16] = "หัวข้อหลักที่ 17";
-        nameStrings[17] = "หัวข้อหลักที่ 18";
-        nameStrings[18] = "หัวข้อหลักที่ 19";
-        nameStrings[19] = "หัวข้อหลักที่ 20";
+        //final String[] nameStrings = new String[20];
+        //nameStrings[0] = "หัวข้อหลักที่ 1";
+        //nameStrings[1] = "หัวข้อหลักที่ 2";
+        //nameStrings[2] = "หัวข้อหลักที่ 3";
+        //nameStrings[3] = "หัวข้อหลักที่ 4";
+        //nameStrings[4] = "หัวข้อหลักที่ 5";
+        //nameStrings[5] = "หัวข้อหลักที่ 6";
+        //nameStrings[6] = "หัวข้อหลักที่ 7";
+        //nameStrings[7] = "หัวข้อหลักที่ 8";
+        //nameStrings[8] = "หัวข้อหลักที่ 9";
+        //nameStrings[9] = "หัวข้อหลักที่ 10";
+        //nameStrings[10] = "หัวข้อหลักที่ 11";
+        //nameStrings[11] = "หัวข้อหลักที่ 12";
+        //nameStrings[12] = "หัวข้อหลักที่ 13";
+        //nameStrings[13] = "หัวข้อหลักที่ 14";
+        //nameStrings[14] = "หัวข้อหลักที่ 15";
+        //nameStrings[15] = "หัวข้อหลักที่ 16";
+        //nameStrings[16] = "หัวข้อหลักที่ 17";
+        //nameStrings[17] = "หัวข้อหลักที่ 18";
+        //nameStrings[18] = "หัวข้อหลักที่ 19";
+        //nameStrings[19] = "หัวข้อหลักที่ 20";
 
-        // for detail short
+
+        hName hName1 = new hName();
+        final String[] strings = hName1.getHname();
+
+        // / for detail short
         String[] detaiStrings = getResources().getStringArray(R.array.detail_short);
 
 
@@ -79,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Create Listview เรียกใช้คำสั่ง class adapter
-        MyAdapter myAdapter = new MyAdapter(this, ints,nameStrings, detaiStrings);
+        MyAdapter myAdapter = new MyAdapter(this, ints,strings, detaiStrings);
         trafficListView.setAdapter(myAdapter);
 
         // การเรียกหน้าใหม่ DetailActivity จากการกดเลือก item ใน list view
@@ -87,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this,DetailActivity.class);
-                intent.putExtra("Name",nameStrings[position]);  //ส่งชื่อไป detailAct
+                intent.putExtra("Name",strings[position]);  //ส่งชื่อไป detailAct
                 intent.putExtra("Image", ints[position]);
                 intent.putExtra("Index", position);
                 startActivity(intent);
