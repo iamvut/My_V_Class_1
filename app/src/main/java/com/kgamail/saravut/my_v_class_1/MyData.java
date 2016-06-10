@@ -4,7 +4,7 @@ package com.kgamail.saravut.my_v_class_1;
  * Created by user on 5/6/2559.
  */
 public class MyData {
-    //explict ประการตัวแปร
+    //explict ประการตัวแปรของ Arrey ที่อ้างอิงถึงรูปใน Drawable
     private int[] ints = new int[]{R.drawable.traffic_01, R.drawable.traffic_02,
             R.drawable.traffic_03, R.drawable.traffic_04, R.drawable.traffic_05,
             R.drawable.traffic_06, R.drawable.traffic_07, R.drawable.traffic_08,
@@ -17,3 +17,4 @@ public class MyData {
         return ints;
     }
 }// Main Class
+

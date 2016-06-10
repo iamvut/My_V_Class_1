@@ -71,8 +71,11 @@ public class MainActivity extends AppCompatActivity {
 
         // for image โดยการเรียกใช้ Class myData .ใน java
 
-        MyData myData = new MyData();
-        final int[] ints = myData.getInts();
+        //MyData myData = new MyData();
+        //final int[] ints = myData.getInts();
+
+        MyImg myImg = new MyImg();
+        final int[] ints = myImg.getImgs();
 
 
         //Create Listview เรียกใช้คำสั่ง class adapter
