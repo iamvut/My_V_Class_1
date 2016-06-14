@@ -4,27 +4,26 @@
 <resources>
 
     <string-array name="detail_short">
-
-        <item>รายละเอียดย่อที่ 1</item>
-        <item>รายละเอียดย่อที่ 2</item>
-        <item>รายละเอียดย่อที่ 3</item>
-        <item>รายละเอียดย่อที่ 4</item>
-        <item>รายละเอียดย่อที่ 5</item>
-        <item>รายละเอียดย่อที่ 6</item>
-        <item>รายละเอียดย่อที่ 7</item>
-        <item>รายละเอียดย่อที่ 8</item>
-        <item>รายละเอียดย่อที่ 9</item>
-        <item>รายละเอียดย่อที่ 10</item>
-        <item>รายละเอียดย่อที่ 11</item>
-        <item>รายละเอียดย่อที่ 12</item>
-        <item>รายละเอียดย่อที่ 13</item>
-        <item>รายละเอียดย่อที่ 14</item>
-        <item>รายละเอียดย่อที่ 15</item>
-        <item>รายละเอียดย่อที่ 16</item>
-        <item>รายละเอียดย่อที่ 17</item>
-        <item>รายละเอียดย่อที่ 18</item>
-        <item>รายละเอียดย่อที่ 19</item>
-        <item>รายละเอียดย่อที่ 20</item>
+        <item>รายละเอียดย่อยที่ 1</item>
+        <item>รายละเอียดย่อยที่ 2</item>
+        <item>รายละเอียดย่อยที่ 3</item>
+        <item>รายละเอียดย่อยที่ 4</item>
+        <item>รายละเอียดย่อยที่ 5</item>
+        <item>รายละเอียดย่อยที่ 6</item>
+        <item>รายละเอียดย่อยที่ 7</item>
+        <item>รายละเอียดย่อยที่ 8</item>
+        <item>รายละเอียดย่อยที่ 9</item>
+        <item>รายละเอียดย่อยที่ 10</item>
+        <item>รายละเอียดย่อยที่ 11</item>
+        <item>รายละเอียดย่อยที่ 12</item>
+        <item>รายละเอียดย่อยที่ 13</item>
+        <item>รายละเอียดย่อยที่ 14</item>
+        <item>รายละเอียดย่อยที่ 15</item>
+        <item>รายละเอียดย่อยที่ 16</item>
+        <item>รายละเอียดย่อยที่ 17</item>
+        <item>รายละเอียดย่อยที่ 18</item>
+        <item>รายละเอียดย่อยที่ 19</item>
+        <item>รายละเอียดย่อยที่ 20</item>
 
     </string-array>
 
@@ -53,4 +52,28 @@
 
     </string-array>
 
+    <string-array name="d_pic">
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+        <item>Bird</item>
+    </string-array>
 </resources>

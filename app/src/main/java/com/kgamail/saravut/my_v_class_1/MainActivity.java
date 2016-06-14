@@ -83,8 +83,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Create Listview เรียกใช้คำสั่ง class adapter
-        MyAdapter myAdapter = new MyAdapter(this, ints,strings, detaiStrings);
-        trafficListView.setAdapter(myAdapter);
+       //MyAdapter myAdapter = new MyAdapter(this, ints,strings, detaiStrings);
+       //trafficListView.setAdapter(myAdapter);
+
+        My_AdapVut my_adapVut = new My_AdapVut(this, ints,strings, detaiStrings);
+        trafficListView.setAdapter(my_adapVut);
 
         // การเรียกหน้าใหม่ DetailActivity จากการกดเลือก item ใน list view
         trafficListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

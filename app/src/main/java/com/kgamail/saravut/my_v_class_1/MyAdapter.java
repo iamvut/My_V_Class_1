@@ -17,6 +17,7 @@ public class MyAdapter extends BaseAdapter {
     private String[] nameStrings, detailStrings;
 
 
+
     public MyAdapter(Context context,
                      int[] ints,
                      String[] nameStrings,
@@ -54,11 +55,11 @@ public class MyAdapter extends BaseAdapter {
         imageView.setImageResource(ints[i]);
 
         // for Text view
-        TextView nameTextView = (TextView) view1.findViewById(R.id.textView2);
-        nameTextView.setText(nameStrings[i]);
+        //TextView nameTextView = (TextView) view1.findViewById(R.id.textView2);
+        //nameTextView.setText(nameStrings[i]);
 
-        TextView detialTextView = (TextView) view1.findViewById(R.id.textView3);
-        detialTextView.setText(detailStrings[i]);
+        //TextView detialTextView = (TextView) view1.findViewById(R.id.textView3);
+        //detialTextView.setText(detailStrings[i]);
 
 
         return view1;
