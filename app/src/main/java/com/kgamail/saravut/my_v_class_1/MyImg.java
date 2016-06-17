@@ -31,13 +31,8 @@ public class MyImg {
     //        R.drawable.v15, R.drawable.v16, R.drawable.traffic_01,
     //        R.drawable.traffic_02,R.drawable.traffic_03,R.drawable.traffic_04};
 
-    private int[] ints = new int[]{R.drawable.traffic_01, R.drawable.traffic_02,
-            R.drawable.traffic_03, R.drawable.traffic_04, R.drawable.traffic_05,
-            R.drawable.traffic_06, R.drawable.traffic_07, R.drawable.traffic_08,
-            R.drawable.traffic_09, R.drawable.traffic_10, R.drawable.traffic_11,
-            R.drawable.traffic_12, R.drawable.traffic_13, R.drawable.traffic_14,
-            R.drawable.traffic_15, R.drawable.traffic_16, R.drawable.traffic_17,
-            R.drawable.traffic_18, R.drawable.traffic_19, R.drawable.traffic_20};
+    private int[] ints = new int[]{R.drawable.v01, R.drawable.v02,
+            R.drawable.v03, R.drawable.v04, R.drawable.v05,};
 
     public int[] getImgs() {
         return ints;

@@ -1,22 +1,25 @@
 package com.kgamail.saravut.my_v_class_1;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.menu.ActionMenuItemView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     // Explicit  Variable  Fom Memory On smart phone
     private ListView trafficListView;
-    private Button aboutmeButton;
+    private Button aboutmeButton,swButton;
     private String urlyoutubeString = "https://youtu.be/0h3NeVv8AGg";
-
+    private int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         // Bind Widget
         trafficListView = (ListView) findViewById(R.id.listView);
         aboutmeButton = (Button) findViewById(R.id.button);
-
+        swButton = (Button) findViewById(R.id.button4);
+        i = 0;
         //  Controller Code
 
         controllerButton();
@@ -37,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         controllListview();
 
-
+        switchButton();
     }// Main method
 
     private void controllListview() {
@@ -75,29 +79,51 @@ public class MainActivity extends AppCompatActivity {
 
         // for image โดยการเรียกใช้ Class myData .ใน java
 
-        //MyData myData = new MyData();
-        //final int[] ints = myData.getInts();
+        MyData myData = new MyData();
+        final int[] ints = myData.getInts();
 
-        MyImg myImg = new MyImg();
-        final int[] ints = myImg.getImgs();
+        //MyImg myImg = new MyImg();
+        //final int[] ints = myImg.getImgs();
 
 
         //Create Listview เรียกใช้คำสั่ง class adapter
-       //MyAdapter myAdapter = new MyAdapter(this, ints,strings, detaiStrings);
-       //trafficListView.setAdapter(myAdapter);
+       MyAdapter myAdapter = new MyAdapter(this, ints,strings, detaiStrings);
+       trafficListView.setAdapter(myAdapter);
 
-        My_AdapVut my_adapVut = new My_AdapVut(this, ints,strings, detaiStrings);
-        trafficListView.setAdapter(my_adapVut);
+        //My_AdapVut my_adapVut = new My_AdapVut(this, ints,strings, detaiStrings);
+        //trafficListView.setAdapter(my_adapVut);
 
         // การเรียกหน้าใหม่ DetailActivity จากการกดเลือก item ใน list view
         trafficListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this,DetailActivity.class);
-                intent.putExtra("Name",strings[position]);  //ส่งชื่อไป detailAct
-                intent.putExtra("Image", ints[position]);
-                intent.putExtra("Index", position);
+
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+
+                if (position == 0){
+                    intent.setData(Uri.parse("https://youtu.be/yN7y1OhoIwo"));
+
+                }else if (position==1){
+                    intent.setData(Uri.parse("https://youtu.be/lxVlBBH9FMA"));
+                }else if (position==2) {
+                    intent.setData(Uri.parse("https://youtu.be/X7kEsbC_tMw"));
+                }else if (position==3) {
+                    intent.setData(Uri.parse("https://youtu.be/RGxkuoVym_I"));
+                }else if (position==4) {
+                    intent.setData(Uri.parse("https://youtu.be/aol5rEvFaG0"));
+                }
+
+                //int duration = Toast.LENGTH_SHORT;
+                //Context context = getApplicationContext();
+                //String Txtmsg =  String.valueOf(position);
+                Toast toast = Toast.makeText(getApplicationContext(), "ตำแหน่ง "+ String.valueOf(position), Toast.LENGTH_SHORT);
+                toast.show();
                 startActivity(intent);
+                //Intent intent = new Intent(MainActivity.this,DetailActivity.class);
+                //intent.putExtra("Name",strings[position]);  //ส่งชื่อไป detailAct
+                //intent.putExtra("Image", ints[position]);
+                //intent.putExtra("Index", position);
+                //startActivity(intent);
 
 
 
@@ -112,13 +138,57 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Code Sound On button
-                MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.bee);
-                mediaPlayer.start();
+                //MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.bee);
+                //mediaPlayer.start();
 
                 //web view   for link youtube
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(urlyoutubeString));
                 startActivity(intent);
+
+
+
+
+            }
+        });
+
+
+    }
+
+    private void switchButton(){
+        swButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                hName hName1 = new hName();
+                final String[] strings = hName1.getHname();
+
+                String[] detaiStrings = getResources().getStringArray(R.array.detail_short);
+
+
+
+                if (i == 0) {
+                    swButton.setText("Adapter");
+                    i = 1;
+
+                    MyImg myImg = new MyImg();
+                    final int[] ints = myImg.getImgs();
+                    My_AdapVut my_adapVut = new My_AdapVut(getApplicationContext(), ints,strings, detaiStrings);
+                    trafficListView.setAdapter(my_adapVut);
+                }else{
+                    swButton.setText("Adater_vut");
+                    i =0;
+
+                    MyData myData = new MyData();
+                    final int[] ints = myData.getInts();
+
+                    MyAdapter myAdapter = new MyAdapter(getApplicationContext(), ints,strings, detaiStrings);
+                    trafficListView.setAdapter(myAdapter);
+
+                    }
+
+
+
 
 
             }
